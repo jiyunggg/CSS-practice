@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    background-color: lightpink;
+    height: 150px;
+}
+
+.mainText {
+    font-family: "Song Myung", serif;
+    font-style: normal;
+    text-align: center;
+    font-size: 42px;
+    font-weight: 500;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    animation: titleText 1s ease-in-out;
+    line-height: 150px;
+}
+
+@keyframes titleText {
+    0% {
+        transform: translateY(70px);
+        opacity: 0;
+    }
+    92% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    overflow: hidden;
+}
+
+.card {
+    position: relative;
+    width: calc(100% - 30px);
+    height: 700px;
+    border: 3.6px dashed lightpink
+}
+
+.imgBox {
+    width: 100%;
+    height: 100%;
+}
+
+.imgBox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    filter: blur(50px);
+}
+
+.textBox {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 250px;
+    z-index: 3;
+}
+
+p {
+    font-family: "Gowun Batang", serif;
+    font-weight: 900;
+    font-style: normal;
+    line-height: 100px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0, 1);
+}
+
+.textSecond {
+    opacity: 0;
+    line-height: 10px;
+    color: white;
+}
+
+.card:hover .imgBox img {
+    filter: blur(0);
+}
+
+.card:hover .textFirst {
+    opacity: 0;
+}
+
+.card:hover .textSecond {
+    opacity: 1;
+    transform: translateY(-10px);
+    transition: all 0.4s ease-in-out 0.15s;
+}
